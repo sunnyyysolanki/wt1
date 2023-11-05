@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+</head>
+
+<body>
+	<div>
+	<input type="text" id="text" ></br>
+	<button onclick="funct('1')" value="1">1</button>
+	<button onclick="funct('2')" value="2">2</button>
+	<button onclick="funct('3')" value="3">3</button><br>
+	<button onclick="funct('4')" value="4">4</button>
+	<button onclick="funct('5')" value="5">5</button>
+	<button onclick="funct('6')" value="6">6</button><br>
+	<button onclick="funct('7')" value="7">7</button>
+	<button onclick="funct('8')" value="8">8</button>
+	<button onclick="funct('9')" value="9">9</button><br>
+	<button onclick="funct('0')" value="0">0</button>
+	<button onclick="funct('+')" value="+">+</button>
+	<button onclick="funct('-')" value="-">-</button></br>
+	<button onclick="funct('*')" value="*">*</button>
+	<button onclick="funct('/')" value="/">/</button>
+	<button onclick="answer()" id="ans">=</button>
+	</div>
+	<script>
+		function funct(value) {
+			var inputText = document.getElementById("text");
+			inputText.value += value;
+		}
+
+		function answer() {
+			var inputText1 = document.getElementById("text");
+			var result;
+			result = eval(inputText1.value);
+			alert("Result: " + result);
+		}
+	</script>
+</body>
+</html>
