@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="searchApp">
+
+<head>
+  <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+</head>
+
+<body ng-controller="SearchController">
+  <input type="text" ng-model="searchTerm">
+  <button ng-click="addToSearchHistory()">Search</button>
+  <p>Search Term: {{ searchTerm }}</p>
+  <h3>Search History</h3>
+  <ul>
+    <li ng-repeat="term in searchHistory">{{ term }}</li>
+  </ul>
+
+  <script>
+    var app = angular.module("searchApp", []);
+
+    app.controller("SearchController", function($scope) {
+      $scope.searchTerm = "";
+	var i=0;
+      $scope.searchHistory = [];
+	
+      $scope.addToSearchHistory = function() {
+        
+          $scope.searchHistory.push($scope.searchTerm);
+          $scope.searchTerm = ""; // Clear the input field
+        
+      };
+    });
+  </script>
+</body>
+
+</html>
